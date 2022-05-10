@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    </head>
+    <body>
+        <div class="main">
+            <form method="post" class="main-form">
+                {{ usuario }}
+                {% csrf_token %}
+                <label class="main-titulo">Login</label>
+                <input type="text" name="usuario" class="main-form-input" placeholder="Usuário">
+                <button type="submit" class="main-form-button">Entrar</button>
+            </form>
+        </div>
+</html>

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Comfortaa:wght@700&family=Lato:wght@700&family=Open+Sans:wght@600&family=PT+Sans:wght@400&family=Palanquin+Dark:wght@600&family=Poppins:wght@300;900&family=Roboto&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Roboto';
+    height: 80px;
+    background-color: rgb(35, 35, 35);
+}
+
+.navbar-titulo {
+    color: white;
+    font-weight: 100;
+}
+
+.navbar-form-link {
+    text-decoration: none;
+    padding: 15px 35px;
+    background-color: rgb(56, 203, 247);
+    color: white;
+    font-family: 'Roboto';
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.navbar-form-link:hover {
+    background-color: rgb(130, 218, 245);
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+    font-size: 17px;
+    font-family: 'Poppins';
+    margin-bottom: 10px;
+    border-style: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.322);
+    margin-right: 25px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.button {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(56, 203, 247);
+    color: white;
+    font-family: 'Roboto';
+    font-size: 18px;
+    border-radius: 5px;
+    border-style: none;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: rgb(130, 218, 245);
+}
+
+.button-delete {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(247, 56, 56);
+    color: white;
+    font-family: 'Roboto';
+    font-size: 18px;
+    border-radius: 5px;
+    border-style: none;
+    transition: 0.2s;
+}
+
+.button-delete:hover {
+    background-color: rgb(250, 118, 118);
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 3%;
+}
+
+.main-acoes {
+    padding-right: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-acoes-inputs {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-items-sub {
+    padding: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: rgba(150, 150, 150, 0.486);
+    width: 730px;
+}
+
+.main-items-sub-item {
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(212, 212, 212);
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto';
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.sub-item {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.main-grafico {
+    padding-left: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-grafico-ticker {
+    font-family: 'Lato';
+}

@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Cotação</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+        <div class="navbar">
+            <h1 class="navbar-titulo">Bem vindo, {{ usuario }}!</h1>
+            <form method="get">
+                {% csrf_token %}
+                <a href="/login" class="navbar-form-link">Sair</a>
+            </form>
+        </div>
+        <div class="main">
+            <div class="main-acoes">
+                <div class="main-acoes-inputs">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div>
+                            <input type="text" name="nomeAcao" class="input" placeholder="Adicionar">
+                            <button type="submit" class="button">Adicionar</button>
+                        </div>
+                        
+                    </form>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div>
+                            <input type="text" name="deleteAcao" class="input" placeholder="Deletar" >
+                            <button type="submit" class="button-delete">Deletar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="main-items">
+                    <div class="main-items-sub">
+                        {% for acao in acoes %}
+                        <div class="main-items-sub-item">
+                            <p class="sub-item"><i>{{acao.nome}}</i></p>
+                            <p class="sub-item"><b>{{acao.ticker}}</b></p>
+                            <p class="sub-item">R${{acao.preco}}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+            <div class="main-grafico">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="main-grafico-inputs">
+                        <input type="text" name="visualizaGrafico" class="input" placeholder="Visualizar" >
+                        <button type="submit" class="button">Visualizar</button>
+                    </div>
+                </form>
+                
+                {% block content %}
+                    {% if chart %}
+                        <p class="main-grafico-ticker">{{ticker}}</p>
+                        <img src="data:image/png;base64, {{chart|safe}}">
+                    {% endif %}
+                {% endblock content %}
+            </div>
+        </div>
+    </body>
+</html>
